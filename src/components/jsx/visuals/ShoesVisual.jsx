@@ -1,51 +1,45 @@
 function ShoesVisual() {
+  const navItems = ['SHOEROOM', 'BEST', 'NEW', '힐', '플랫', '워커', '부츠', '스니커즈', '오프라인 매장']
+  const bestItems = Array.from({ length: 4 })
+  const newItems = Array.from({ length: 4 })
+
   return (
     <div className="project-visual shoes-visual">
-      <div className="shoe-nav">
-        <strong>SOLE.</strong>
+      <nav className="shoes-nav">
+        {navItems.map((item) => (
+          <span key={item}>{item}</span>
+        ))}
+      </nav>
 
-        <div>
-          <span>RUNNING</span>
-          <span>LIFESTYLE</span>
-          <span>NEW</span>
+      <div className="shoes-brand">SHOEROOM</div>
+
+      <div className="shoes-hero">
+        <div className="shoes-hero-image"></div>
+      </div>
+
+      <div className="shoes-section">
+        <span className="shoes-section-label">BEST</span>
+
+        <div className="shoes-product-row">
+          {bestItems.map((_, index) => (
+            <div className="shoes-product-card" key={`best-${index}`}>
+              <div className="shoes-product-thumb"></div>
+            </div>
+          ))}
         </div>
-
-        <span>🛒</span>
       </div>
 
-      <div className="shoe-copy">
-        <span>NEW RELEASE / 2025</span>
+      <div className="shoes-section">
+        <span className="shoes-section-label">NEW</span>
 
-        <strong>
-          MOVE
-          <br />
-          FORWARD.
-        </strong>
-
-        <small>EVERYDAY SNEAKER / 01</small>
-      </div>
-
-      <div className="sneaker-display">
-        <div className="sneaker-shadow"></div>
-
-        <div className="sneaker">
-          <div className="sneaker-upper">
-            <span className="shoe-brand">SOLE.</span>
-          </div>
-
-          <div className="sneaker-sole"></div>
-
-          <div className="sneaker-lace one"></div>
-          <div className="sneaker-lace two"></div>
-          <div className="sneaker-lace three"></div>
-
-          <div className="sneaker-panel"></div>
+        <div className="shoes-product-row">
+          {newItems.map((_, index) => (
+            <div className="shoes-product-card" key={`new-${index}`}>
+              <div className="shoes-product-thumb"></div>
+            </div>
+          ))}
         </div>
-
-        <span className="shoe-price">₩129,000</span>
       </div>
-
-      <div className="shoe-index">01 / 04</div>
     </div>
   )
 }

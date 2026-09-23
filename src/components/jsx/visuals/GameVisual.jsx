@@ -1,51 +1,47 @@
 function GameVisual() {
+  const meteorClusters = [
+    { top: '6%', left: '3%', scale: 1 },
+    { top: '4%', left: '95%', scale: 0.8 },
+    { top: '2%', left: '99%', scale: 0.6 },
+    { top: '10%', left: '25%', scale: 0.7 },
+    { top: '8%', left: '38%', scale: 0.6 },
+    { top: '18%', left: '68%', scale: 0.75 },
+    { top: '14%', left: '82%', scale: 0.9 },
+    { top: '22%', left: '90%', scale: 0.7 },
+    { top: '28%', left: '0%', scale: 0.7 },
+    { top: '38%', left: '8%', scale: 1 },
+    { top: '35%', left: '25%', scale: 0.7 },
+    { top: '48%', left: '38%', scale: 0.7 },
+    { top: '38%', left: '66%', scale: 0.7 },
+    { top: '50%', left: '68%', scale: 0.7 },
+    { top: '48%', left: '98%', scale: 0.6 },
+  ]
+
   return (
     <div className="project-visual game-visual">
-      <div className="game-hud">
-        <span>
-          METEOR
-          <br />
-          DODGE
-        </span>
+      <span className="game-score">score : 168</span>
 
-        <div>
-          <small>SCORE</small>
-          <strong>01280</strong>
+      {meteorClusters.map((meteor, index) => (
+        <div
+          className="game-meteor-cluster"
+          key={index}
+          style={{
+            top: meteor.top,
+            left: meteor.left,
+            transform: `scale(${meteor.scale})`,
+          }}
+        >
+          <span className="game-rock"></span>
+          <span className="game-rock"></span>
+          <span className="game-rock"></span>
         </div>
+      ))}
 
-        <div>
-          <small>TIME</small>
-          <strong>01:24</strong>
-        </div>
-      </div>
-
-      <div className="game-stars">
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-      </div>
-
-      <div className="meteor meteor-one">
-        <span></span>
-      </div>
-
-      <div className="meteor meteor-two">
-        <span></span>
-      </div>
-
-      <div className="meteor meteor-three">
-        <span></span>
-      </div>
-
-      <div className="game-player">
-        <span></span>
-      </div>
-
-      <div className="game-message">
-        <span>AVOID THE METEORS</span>
+      <div className="game-ship">
+        <span className="game-ship-cockpit"></span>
+        <span className="game-ship-body"></span>
+        <span className="game-ship-wing left"></span>
+        <span className="game-ship-wing right"></span>
       </div>
     </div>
   )

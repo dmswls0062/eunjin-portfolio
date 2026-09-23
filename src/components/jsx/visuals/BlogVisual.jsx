@@ -1,54 +1,67 @@
 function BlogVisual() {
+  const sidebarSections = [
+    { label: 'NOTICE', items: ['공지게시판'] },
+    { label: 'GUEST', items: ['Q & A', '방명록'] },
+    { label: 'POST', items: ['장소', '맛집'] },
+  ]
+
+  const posts = [
+    { title: '설날 연휴', date: '2024/02/06' },
+    { title: '[이벤트] 크리스마스 방명록 이벤트 (2)', date: '2023/12/05' },
+    { title: '시스템 점검에 따른 홈페이지 일시 중지 안내 (1)', date: '2023/12/05' },
+    { title: '시스템 점검에 따른 홈페이지 일시 중지 안내 (1)', date: '2023/12/05' },
+  ]
+
   return (
     <div className="project-visual blog-visual">
-      <div className="community-header">
-        <strong>COMMUNITY.</strong>
-
-        <div>
-          <span>HOME</span>
-          <span>BOARD</span>
-          <span>ABOUT</span>
-        </div>
+      <div className="blog-topbar">
+        <strong>Blog</strong>
+        <span className="blog-welcome">eunjin님 환영합니다</span>
       </div>
 
-      <div className="community-title">
-        <span>COMMUNITY</span>
-        <strong>RECENT POSTS</strong>
-      </div>
+      <div className="blog-body">
+        <aside className="blog-sidebar">
+          {sidebarSections.map((section) => (
+            <div className="blog-sidebar-group" key={section.label}>
+              <span className="blog-sidebar-title">{section.label}</span>
 
-      <div className="post-list">
-        <div className="post-item">
-          <span>01</span>
+              {section.items.map((item) => (
+                <span className="blog-sidebar-item" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          ))}
+        </aside>
 
-          <div>
-            <strong>오늘의 이야기</strong>
-            <small>새로운 하루를 시작하며</small>
+        <main className="blog-main">
+          <h4 className="blog-page-title">공지</h4>
+
+          <div className="blog-notice-box">공지사항을 확인하세요</div>
+
+          <div className="blog-table-toolbar">
+            <span>10 entries per page</span>
+            <span className="blog-search">Search...</span>
           </div>
 
-          <em>24</em>
-        </div>
+          <div className="blog-table">
+            <div className="blog-table-head">
+              <span>제목</span>
+              <span>작성일</span>
+            </div>
 
-        <div className="post-item">
-          <span>02</span>
-
-          <div>
-            <strong>개발하면서 배운 것들</strong>
-            <small>작은 문제를 해결하는 과정</small>
+            {posts.map((post, index) => (
+              <div className="blog-table-row" key={index}>
+                <span className="blog-table-title">{post.title}</span>
+                <span className="blog-table-date">{post.date}</span>
+              </div>
+            ))}
           </div>
 
-          <em>18</em>
-        </div>
-
-        <div className="post-item">
-          <span>03</span>
-
-          <div>
-            <strong>자유롭게 이야기해요</strong>
-            <small>누구나 작성할 수 있는 게시글</small>
-          </div>
-
-          <em>32</em>
-        </div>
+          <span className="blog-table-footer">
+            Showing 1 to {posts.length} of {posts.length} entries
+          </span>
+        </main>
       </div>
     </div>
   )

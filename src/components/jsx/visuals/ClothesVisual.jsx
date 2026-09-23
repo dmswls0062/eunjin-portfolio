@@ -1,58 +1,37 @@
 function ClothesVisual() {
+  const categories = ['All', 'Outer', 'Tops', 'Dresses', 'Bottoms']
+  const products = Array.from({ length: 8 })
+
   return (
     <div className="project-visual clothes-visual">
-      <div className="fashion-nav">
-        <strong>FORM</strong>
+      <div className="clothes-topbar">
+        <div className="clothes-topbar-left">
+          <strong>T:unique</strong>
 
-        <div>
-          <span>WOMEN</span>
-          <span>MEN</span>
-          <span>NEW</span>
-          <span>SALE</span>
+          <nav className="clothes-categories">
+            {categories.map((category) => (
+              <span key={category}>{category}</span>
+            ))}
+          </nav>
         </div>
 
-        <span>♡</span>
-      </div>
-
-      <div className="fashion-copy">
-        <span>NEW COLLECTION / 25</span>
-
-        <strong>
-          EVERYDAY
-          <br />
-          WEAR.
-        </strong>
-
-        <small>MINIMAL · SIMPLE · MODERN</small>
-      </div>
-
-      <div className="clothes-products">
-        <div className="clothing-card">
-          <div className="clothing-shape shirt">
-            <span className="clothing-detail">FORM</span>
-          </div>
-
-          <span>SHIRT / 01</span>
-        </div>
-
-        <div className="clothing-card">
-          <div className="clothing-shape jacket">
-            <span className="clothing-detail">FORM</span>
-          </div>
-
-          <span>JACKET / 02</span>
-        </div>
-
-        <div className="clothing-card">
-          <div className="clothing-shape pants">
-            <span className="clothing-detail">FORM</span>
-          </div>
-
-          <span>PANTS / 03</span>
+        <div className="clothes-topbar-icons">
+          <span>⌕</span>
+          <span>☺</span>
+          <span>🛒</span>
         </div>
       </div>
 
-      <div className="fashion-number">01—03</div>
+      <div className="clothes-grid">
+        {products.map((_, index) => (
+          <div className="clothes-grid-item" key={index}>
+            <div className="clothes-grid-thumb"></div>
+            <span className="clothes-grid-label">
+              ITEM {String(index + 1).padStart(2, '0')}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
