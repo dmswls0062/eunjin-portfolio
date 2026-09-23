@@ -16,395 +16,221 @@
 ===================================================== */
 
 .diet-visual {
-  position: relative;
+  display: flex;
+  flex-direction: column;
 
-  background: #e8e6df;
-  color: #171717;
+  background: #ffffff;
+  color: #222;
+}
+
+.diet-topbar {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 6px 16px;
+
+  background: #4ba586;
+  color: #fff;
+
+  font-size: 6px;
 }
 
 .diet-nav {
-  position: absolute;
-  top: 24px;
-  left: 30px;
-  right: 30px;
-
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  padding-bottom: 17px;
+  padding: 8px 16px;
 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  border-bottom: 1px solid #eee;
 }
 
-.diet-nav strong {
-  justify-self: start;
-
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+.diet-logo {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4ba586;
 }
 
 .diet-nav-menu {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 18px;
+  gap: 10px;
 }
 
 .diet-nav-menu span {
-  font-size: 7px;
-  font-weight: 500;
-  white-space: nowrap;
-  letter-spacing: 0.04em;
+  font-size: 6.5px;
+  color: #444;
 }
 
 .diet-nav-icons {
-  justify-self: end;
-
   display: flex;
-  align-items: center;
-  gap: 13px;
+  gap: 8px;
+
+  font-size: 10px;
+  color: #4ba586;
 }
 
-.diet-nav-icons span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 17px;
-  height: 17px;
-
-  font-size: 15px;
-  line-height: 1;
-}
-
-.diet-copy {
-  position: absolute;
-  top: 100px;
-  left: 30px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.diet-copy > span {
-  font-size: 7px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-
-  color: #777;
-}
-
-.diet-copy strong {
-  margin-top: 9px;
-
-  font-size: clamp(48px, 5vw, 72px);
-  line-height: 0.82;
-
-  letter-spacing: -0.08em;
-}
-
-.diet-copy small {
-  margin-top: 17px;
-
-  font-size: 7px;
-  letter-spacing: 0.1em;
-
-  color: #777;
-}
-
-.diet-products {
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  bottom: 24px;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-
-  gap: 18px;
-}
-
-.diet-product {
-  width: 105px;
-
-  font-size: 8px;
-  font-weight: 600;
-}
-
-.diet-product p {
-  margin-top: 8px;
-
-  font-size: 7px;
-  letter-spacing: 0.08em;
-
-  color: #666;
-}
-
-.food-shape {
+.diet-hero {
   position: relative;
 
-  width: 105px;
-  height: 125px;
-
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  padding: 16px;
+
+  background: #f4f1ea;
 }
 
-.food-shape.chicken {
-  transform: rotate(-12deg);
+.diet-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.food-shape.chicken {
-  transform: rotate(-8deg);
+.diet-hero-label {
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: #e0a53a;
 }
 
-.chicken-meat {
-  position: absolute;
-
-  left: 22px;
-  top: 15px;
-
-  width: 62px;
-  height: 78px;
-
-  background: #f1c8a7;
-
-  border: 1px solid rgba(80, 55, 40, 0.35);
-
-  border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
-
-  box-shadow:
-    inset -8px -10px 0 rgba(170, 110, 75, 0.1),
-    inset 7px 6px 0 rgba(255, 255, 255, 0.2);
+.diet-hero-text h4 {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #2e5e4e;
 }
 
-.chicken-meat::before {
-  content: '';
+.diet-hero-image {
+  position: relative;
 
-  position: absolute;
+  width: 90px;
+  height: 90px;
 
-  left: 12px;
-  top: 12px;
-
-  width: 26px;
-  height: 32px;
-
-  border-left: 1px solid rgba(130, 80, 55, 0.18);
-  border-radius: 50%;
-}
-
-.chicken-bone {
-  position: absolute;
-
-  left: 58px;
-  top: 75px;
-
-  width: 13px;
-  height: 42px;
-
-  background: #f0e5d5;
-
-  border: 1px solid rgba(90, 75, 60, 0.28);
-
+  background: #e4ded0;
   border-radius: 6px;
-
-  transform: rotate(-8deg);
 }
 
-.chicken-bone::after {
-  content: '';
-
+.diet-hero-arrow {
   position: absolute;
+  top: 50%;
 
-  left: -7px;
-  bottom: -9px;
+  transform: translateY(-50%);
 
-  width: 27px;
-  height: 18px;
-
-  background: #f0e5d5;
-
-  border: 1px solid rgba(90, 75, 60, 0.28);
-
-  border-radius: 50%;
-}
-
-.food-shape.egg {
-  align-items: flex-end;
-}
-
-.egg-white {
-  position: absolute;
-
-  left: 10px;
-  bottom: 10px;
-
-  width: 88px;
-  height: 72px;
-
-  background: #f7f4eb;
-
-  border: 1px solid rgba(90, 85, 75, 0.25);
-
-  border-radius:
-    55% 48% 35% 40%
-    / 60% 55% 35% 40%;
-
-  transform: rotate(-3deg);
-}
-
-.egg-white::before {
-  content: '';
-
-  position: absolute;
-
-  left: 20px;
-  top: 14px;
-
-  width: 48px;
-  height: 30px;
-
-  border-top: 1px solid rgba(120, 110, 95, 0.16);
-
-  border-radius: 50%;
-}
-
-.egg-yolk {
-  position: absolute;
-
-  left: 42px;
-  bottom: 30px;
-
-  width: 38px;
-  height: 38px;
-
-  background: #e6b84f;
-
-  border: 1px solid rgba(120, 85, 25, 0.25);
-
-  border-radius: 50%;
-
-  box-shadow:
-    inset 4px 4px 0 rgba(255, 255, 255, 0.2),
-    0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-.food-shape.drink {
-  align-items: flex-end;
-}
-
-.drink-body {
-  position: absolute;
-
-  left: 29px;
-  bottom: 8px;
-
-  width: 47px;
-  height: 96px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #d8ddd5;
-
-  border: 1px solid rgba(70, 75, 65, 0.35);
-
-  border-radius: 9px 9px 13px 13px;
-
-  box-shadow:
-    inset 7px 0 0 rgba(255, 255, 255, 0.2),
-    inset -6px 0 0 rgba(90, 95, 85, 0.06);
-}
-
-.drink-body::before {
-  content: '';
-
-  position: absolute;
-
-  top: 19px;
-  left: 0;
-  right: 0;
-
-  height: 1px;
-
-  background: rgba(80, 85, 75, 0.2);
-}
-
-.drink-body span {
-  font-size: 9px;
-  font-weight: 800;
-
-  letter-spacing: 0.06em;
-
-  transform: rotate(-90deg);
-
-  color: #60665d;
-}
-
-.drink-lid {
-  position: absolute;
-
-  left: 38px;
-  bottom: 99px;
-
-  width: 29px;
+  width: 14px;
   height: 14px;
 
-  background: #c5cbc2;
-
-  border: 1px solid rgba(70, 75, 65, 0.35);
-
-  border-radius: 4px 4px 2px 2px;
-}
-
-.drink-lid::after {
-  content: '';
-
-  position: absolute;
-
-  left: 5px;
-  top: -5px;
-
-  width: 17px;
-  height: 6px;
-
-  background: #b6bcb3;
-
-  border: 1px solid rgba(70, 75, 65, 0.3);
-
-  border-radius: 3px 3px 0 0;
-}
-
-.diet-stamp {
-  position: absolute;
-  top: 123px;
-  right: 30px;
-
-  width: 58px;
-  height: 58px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #777;
   border-radius: 50%;
+  background: #fff;
 
-  font-size: 6px;
-  line-height: 1.2;
+  font-size: 9px;
+  color: #4ba586;
+}
+
+.diet-hero-arrow.left {
+  left: -7px;
+}
+
+.diet-hero-arrow.right {
+  right: -7px;
+}
+
+.diet-flavors {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 14px 16px;
+}
+
+.diet-flavors-title {
+  font-size: 8px;
+  font-weight: 600;
   text-align: center;
+}
 
-  letter-spacing: 0.08em;
+.diet-flavors-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
 
-  transform: rotate(8deg);
+.diet-flavor-banner {
+  height: 22px;
 
-  color: #666;
+  background: #e9e5da;
+  border-radius: 3px;
+}
+
+.diet-promo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px;
+
+  background: #f3ca4a;
+}
+
+.diet-promo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.diet-promo-text strong {
+  font-size: 13px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.diet-promo-text span {
+  font-size: 7px;
+  color: #5c4a1a;
+}
+
+.diet-promo-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  background: #fff;
+
+  font-size: 7px;
+  color: #333;
+}
+
+.diet-footer {
+  margin-top: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+
+  padding: 14px 16px;
+
+  background: #3d4f47;
+  color: #cfd6d2;
+}
+
+.diet-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  font-size: 7px;
+}
+
+.diet-footer-col strong {
+  color: #7fc9ac;
+  font-size: 9px;
 }
 
 /* =====================================================
@@ -414,12 +240,23 @@
 .clothes-visual {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 
-  background: #dedbd5;
+  background: #ffffff;
   color: #181818;
 
-  padding: 24px 26px;
+  overflow-y: hidden;
+}
+
+.clothes-toplinks {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 6px 20px 0;
+
+  font-size: 6px;
+  color: #555;
 }
 
 .clothes-topbar {
@@ -427,20 +264,15 @@
   justify-content: space-between;
   align-items: center;
 
-  padding-bottom: 14px;
+  padding: 10px 20px 12px;
 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid #eee;
 }
 
-.clothes-topbar-left {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.clothes-topbar-left strong {
-  font-size: 13px;
-  font-weight: 800;
+.clothes-logo {
+  font-size: 15px;
+  font-weight: 700;
+  font-style: italic;
   letter-spacing: -0.02em;
 }
 
@@ -451,19 +283,16 @@
 
 .clothes-categories span {
   font-size: 8px;
-  letter-spacing: 0.05em;
-  color: #444;
+  font-weight: 600;
+  color: #333;
 }
 
 .clothes-topbar-icons {
   display: flex;
-  align-items: center;
-  gap: 12px;
-}
+  gap: 10px;
 
-.clothes-topbar-icons span {
-  font-size: 12px;
-  line-height: 1;
+  font-size: 11px;
+  color: #333;
 }
 
 .clothes-grid {
@@ -472,32 +301,37 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
+
+  padding: 14px 20px;
+
+  overflow: hidden;
 }
 
 .clothes-grid-item {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .clothes-grid-thumb {
   aspect-ratio: 3 / 4;
 
   background: #f2f0ec;
-  border: 1px solid #bdbab4;
+  border: 1px solid #ececea;
 }
 
-.clothes-grid-label {
-  font-size: 7px;
-  letter-spacing: 0.04em;
-  color: #666;
-  text-align: center;
+.clothes-grid-title {
+  font-size: 6.5px;
+  color: #333;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.fashion-number {
-  position: absolute;
-  right: 30px;
-  bottom: 25px;
+.clothes-grid-price {
+  font-size: 6.5px;
+  color: #888;
 }
 
 /* =====================================================
@@ -507,83 +341,106 @@
 .shoes-visual {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-
-  background: #d9d9d6;
+  background: #ffffff;
   color: #161616;
-
-  padding: 18px 24px;
+  overflow: hidden;
+  min-height: 0;
 }
 
+/* 상단 네비 */
 .shoes-nav {
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-
-  gap: 16px;
-
-  padding-bottom: 14px;
-
-  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  gap: 7px;
+  padding: 4px 12px;
+  border-bottom: 1px solid #eee;
 }
 
 .shoes-nav span {
-  font-size: 8px;
-  letter-spacing: 0.06em;
-  color: #333;
+  font-size: 4.5px;
+  color: #555;
 }
 
+/* 브랜드 */
 .shoes-brand {
   text-align: center;
-
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  padding: 4px 0 5px;
+  font-size: 10px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.08em;
 }
 
+/* 메인 이미지 */
 .shoes-hero {
+  position: relative;
   display: flex;
   justify-content: center;
+  padding: 0 12px 5px;
 }
 
 .shoes-hero-image {
-  width: 60%;
-  aspect-ratio: 21 / 9;
-
+  width: 52%;
+  aspect-ratio: 16 / 7;
   background: #f3f2ee;
-  border: 1px solid #bdbab4;
+  border: 1px solid #e5e3de;
 }
 
+.shoes-hero-arrow {
+  position: absolute;
+  top: 45%;
+  font-size: 8px;
+  color: #999;
+}
+
+.shoes-hero-arrow.left {
+  left: 16px;
+}
+
+.shoes-hero-arrow.right {
+  right: 16px;
+}
+
+/* 상품 전체 */
+.shoes-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 12px 6px;
+  overflow: hidden;
+}
+
+/* BEST / NEW */
 .shoes-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
 }
 
 .shoes-section-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: 6px;
+  font-style: italic;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2px;
 }
 
+/* 상품 4개 */
 .shoes-product-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-
-  padding: 0 8px;
+  gap: 5px;
 }
 
 .shoes-product-card {
   display: flex;
+  min-width: 0;
 }
 
 .shoes-product-thumb {
   width: 100%;
   aspect-ratio: 4 / 3;
-
-  background: #f3f2ee;
-  border: 1px solid #bdbab4;
+  background: #f5f5f3;
+  border: 1px solid #ececea;
 }
 
 /* =====================================================

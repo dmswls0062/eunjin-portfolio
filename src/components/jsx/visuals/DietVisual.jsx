@@ -1,70 +1,81 @@
 function DietVisual() {
+  const navItems = ['Home', 'Shop', 'Best', '오늘의 특가', '나의 식단', 'Contact']
+  const flavorBanners = Array.from({ length: 4 })
+
   return (
     <div className="project-visual diet-visual">
-      <div className="diet-nav">
-        <strong>DIETFIT</strong>
+      <div className="diet-topbar">
+        <span>dietfitdie@gmail.com</span>
+        <span className="diet-topbar-links">Privacy Policy / Terms of Use / Sales and Refunds</span>
+      </div>
 
-        <div className="diet-nav-menu">
-          <span>HOME</span>
-          <span>SHOP</span>
-          <span>오늘의 특가</span>
-          <span>나의 식단</span>
-          <span>CONTACT</span>
-        </div>
+      <div className="diet-nav">
+        <strong className="diet-logo">Dietfit</strong>
+
+        <nav className="diet-nav-menu">
+          {navItems.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </nav>
 
         <div className="diet-nav-icons">
           <span>⌕</span>
-          <span>♙</span>
+          <span>☺</span>
         </div>
       </div>
 
-      <div className="diet-copy">
-        <span>HEALTHY FOOD STORE</span>
-
-        <strong>
-          DIET
-          <br />
-          FOOD
-        </strong>
-
-        <small>HEALTHY · SIMPLE · DELICIOUS</small>
-      </div>
-
-      <div className="diet-products">
-        <div className="diet-product">
-          <div className="food-shape chicken">
-            <div className="chicken-bone"></div>
-            <div className="chicken-meat"></div>
-          </div>
-
-          <p>CHICKEN</p>
+      <div className="diet-hero">
+        <div className="diet-hero-text">
+          <span className="diet-hero-label">DIETFIT</span>
+          <h4>
+            Healthy and Delicious
+            <br />
+            Diet Food
+          </h4>
         </div>
 
-        <div className="diet-product">
-          <div className="food-shape egg">
-            <div className="egg-white"></div>
-            <div className="egg-yolk"></div>
-          </div>
-
-          <p>EGG</p>
-        </div>
-
-        <div className="diet-product">
-          <div className="food-shape drink">
-            <div className="drink-lid"></div>
-            <div className="drink-body">
-              <span>FIT</span>
-            </div>
-          </div>
-
-          <p>DRINK</p>
+        <div className="diet-hero-image">
+          <span className="diet-hero-arrow left">‹</span>
+          <span className="diet-hero-arrow right">›</span>
         </div>
       </div>
 
-      <div className="diet-stamp">
-        GOOD
-        <br />
-        FOR YOU
+      <div className="diet-flavors">
+        <span className="diet-flavors-title">⭐ Discover New Flavors ⭐</span>
+
+        <div className="diet-flavors-row">
+          {flavorBanners.map((_, index) => (
+            <div className="diet-flavor-banner" key={index}></div>
+          ))}
+        </div>
+      </div>
+
+      <div className="diet-promo">
+        <div className="diet-promo-text">
+          <strong>
+            나만의 식단
+            <br />
+            in Dietfit
+          </strong>
+          <span>맞춤형 식단을 알아보세요</span>
+        </div>
+
+        <span className="diet-promo-circle">free</span>
+      </div>
+
+      <div className="diet-footer">
+        <div className="diet-footer-col">
+          <strong>Dietfit</strong>
+          <span>Shop Info</span>
+        </div>
+
+        <div className="diet-footer-col">
+          <span>Account</span>
+        </div>
+
+        <div className="diet-footer-col">
+          <span>Contact</span>
+        </div>
       </div>
     </div>
   )
