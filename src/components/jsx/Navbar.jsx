@@ -14,7 +14,7 @@ function Navbar() {
         <a href="#contact">CONTACT</a>
       </nav>
 
-      <span className="nav-status">AVAILABLE FOR WORK</span>
+      <span className="nav-status">DEVELOPER PORTFOLIO</span>
     </header>
   )
 }

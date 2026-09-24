@@ -6,7 +6,7 @@ function Hero() {
       <div className="hero-background-text">DEVELOPER</div>
 
       <div className="hero-content">
-        <p className="hero-label">FRONTEND DEVELOPER</p>
+        <p className="hero-label">DEVELOPER</p>
 
         <h1>
           안녕하세요, <span>김은진</span>입니다.
@@ -23,7 +23,7 @@ function Hero() {
       </div>
 
       <div className="hero-bottom">
-        <span>SCROLL TO EXPLORE</span>
+        <span>SCROLL DOWN</span>
 
         <div className="scroll-line">
           <span></span>

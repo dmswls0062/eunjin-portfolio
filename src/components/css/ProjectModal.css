@@ -1,3 +1,7 @@
+/* =====================================================
+   MODAL OVERLAY
+===================================================== */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -14,6 +18,11 @@
 
   animation: modalOverlayIn 0.3s ease;
 }
+
+
+/* =====================================================
+   PROJECT MODAL
+===================================================== */
 
 .project-modal {
   position: relative;
@@ -45,6 +54,11 @@
 .project-modal::-webkit-scrollbar-thumb {
   background: #999;
 }
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
 
 .modal-close {
   position: absolute;
@@ -88,6 +102,11 @@
   transform: rotate(90deg);
 }
 
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -108,6 +127,7 @@
 
   font-size: 11px;
   font-weight: 500;
+
   color: #888;
 }
 
@@ -116,6 +136,7 @@
 
   font-size: 9px;
   font-weight: 600;
+
   letter-spacing: 0.15em;
 
   color: #888;
@@ -126,6 +147,11 @@
   line-height: 0.95;
   letter-spacing: -0.07em;
 }
+
+
+/* =====================================================
+   TECH
+===================================================== */
 
 .modal-tech {
   display: flex;
@@ -147,8 +173,14 @@
 
   font-size: 9px;
   color: #666;
+
   white-space: nowrap;
 }
+
+
+/* =====================================================
+   BODY
+===================================================== */
 
 .modal-body {
   display: grid;
@@ -159,20 +191,393 @@
   padding-top: 45px;
 }
 
+
+/* =====================================================
+   PROJECT VISUAL COMMON
+===================================================== */
+
 .modal-visual {
   min-width: 0;
 }
+
+
+/* =====================================================
+   ACTUAL PROJECT IMAGE
+===================================================== */
+
+.modal-main-image {
+  position: relative;
+
+  width: 100%;
+  height: 430px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #e9e9e6;
+
+  border: 1px solid #dededb;
+
+  cursor: zoom-in;
+}
+
+
+/* =====================================================
+   MAIN IMAGE
+===================================================== */
+
+.modal-main-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  background: #fff;
+
+  transition: transform 0.35s ease;
+}
+
+.modal-main-image:hover img {
+  transform: scale(1.015);
+}
+
+
+/* =====================================================
+   IMAGE PAGE LABEL
+===================================================== */
+
+.modal-image-label {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  z-index: 5;
+
+  padding: 7px 10px;
+
+  background: rgba(17, 17, 17, 0.88);
+  color: #fff;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   IMAGE ZOOM GUIDE
+===================================================== */
+
+.modal-image-zoom {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  z-index: 5;
+
+  padding: 7px 10px;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #555;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  line-height: 1;
+
+  opacity: 0;
+
+  transform: translateY(-4px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+  pointer-events: none;
+}
+
+.modal-main-image:hover .modal-image-zoom {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   IMAGE THUMBNAILS
+===================================================== */
+
+.modal-thumbnails {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+
+/* =====================================================
+   THUMBNAIL BUTTON
+===================================================== */
+
+.modal-thumbnail {
+  position: relative;
+
+  width: 100%;
+  height: 72px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 1px solid #d5d5d2;
+
+  background: #e9e9e6;
+
+  cursor: pointer;
+
+  opacity: 0.65;
+
+  transition:
+    opacity 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.modal-thumbnail:hover {
+  opacity: 0.9;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   ACTIVE THUMBNAIL
+===================================================== */
+
+.modal-thumbnail.active {
+  opacity: 1;
+
+  border-color: #111;
+}
+
+
+/* =====================================================
+   THUMBNAIL IMAGE
+===================================================== */
+
+.modal-thumbnail img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  background: #fff;
+}
+
+
+/* =====================================================
+   THUMBNAIL NUMBER
+===================================================== */
+
+.modal-thumbnail span {
+  position: absolute;
+
+  left: 6px;
+  bottom: 5px;
+
+  z-index: 2;
+
+  padding: 2px 5px;
+
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* =====================================================
+   IMAGE LIGHTBOX
+===================================================== */
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+
+  background: rgba(0, 0, 0, 0.92);
+
+  backdrop-filter: blur(12px);
+
+  animation: lightboxIn 0.25s ease;
+}
+
+
+/* =====================================================
+   LIGHTBOX CONTENT
+===================================================== */
+
+.image-lightbox-content {
+  position: relative;
+
+  width: min(1200px, 92vw);
+  height: min(85vh, 900px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: lightboxImageIn 0.3s ease;
+}
+
+
+/* =====================================================
+   LIGHTBOX IMAGE
+===================================================== */
+
+.image-lightbox-content img {
+  display: block;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  background: #fff;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   LIGHTBOX LABEL
+===================================================== */
+
+.image-lightbox-label {
+  position: absolute;
+
+  top: -35px;
+  left: 0;
+
+  z-index: 3;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =====================================================
+   LIGHTBOX CLOSE
+===================================================== */
+
+.image-lightbox-close {
+  position: absolute;
+
+  top: 25px;
+  right: 30px;
+
+  z-index: 20;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.image-lightbox-close:hover {
+  background: #fff;
+  color: #111;
+
+  border-color: #fff;
+
+  transform: rotate(90deg);
+}
+
+
+/* =====================================================
+   OLD VISUAL
+===================================================== */
 
 .modal-visual .project-visual {
   min-height: 300px;
 }
 
+
+/* =====================================================
+   INFO
+===================================================== */
+
 .modal-info {
   min-width: 0;
 }
 
+
+/* =====================================================
+   META
+===================================================== */
+
 .modal-meta {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   gap: 20px;
@@ -194,6 +599,7 @@
 .modal-meta span {
   font-size: 8px;
   font-weight: 600;
+
   letter-spacing: 0.12em;
 
   color: #999;
@@ -205,6 +611,11 @@
 
   line-height: 1.4;
 }
+
+
+/* =====================================================
+   MODAL SECTION
+===================================================== */
 
 .modal-section {
   padding: 30px 0;
@@ -223,6 +634,7 @@
 
   font-size: 9px;
   font-weight: 700;
+
   letter-spacing: 0.12em;
 
   color: #888;
@@ -234,6 +646,11 @@
 
   color: #555;
 }
+
+
+/* =====================================================
+   FEATURE LIST
+===================================================== */
 
 .feature-list {
   list-style: none;
@@ -259,8 +676,14 @@
   min-width: 25px;
 
   font-size: 9px;
+
   color: #999;
 }
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
 
 @keyframes modalOverlayIn {
   from {
@@ -284,6 +707,33 @@
   }
 }
 
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightboxImageIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
 @media (max-width: 1100px) {
   .modal-overlay {
     padding: 25px;
@@ -291,6 +741,7 @@
 
   .project-modal {
     width: min(900px, 100%);
+
     padding: 60px 45px 45px;
   }
 
@@ -300,7 +751,12 @@
 
   .modal-body {
     grid-template-columns: 1fr;
+
     gap: 35px;
+  }
+
+  .modal-main-image {
+    height: 420px;
   }
 
   .modal-visual .project-visual {
@@ -310,16 +766,32 @@
   .modal-info {
     width: 100%;
   }
+
+  .image-lightbox {
+    padding: 40px;
+  }
+
+  .image-lightbox-content {
+    width: 94vw;
+    height: 88vh;
+  }
 }
+
+
+/* =====================================================
+   TABLET / SMALL LAPTOP
+===================================================== */
 
 @media (max-width: 900px) {
   .modal-overlay {
     align-items: center;
+
     padding: 20px;
   }
 
   .project-modal {
     max-height: 92vh;
+
     padding: 60px 35px 40px;
   }
 
@@ -333,12 +805,15 @@
 
   .modal-header {
     flex-direction: column;
+
     gap: 25px;
+
     padding-right: 50px;
   }
 
   .modal-tech {
     justify-content: flex-start;
+
     max-width: 100%;
   }
 
@@ -346,10 +821,47 @@
     padding-top: 35px;
   }
 
+  .modal-main-image {
+    height: 400px;
+  }
+
+  .modal-thumbnails {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .modal-thumbnail {
+    height: 68px;
+  }
+
   .modal-visual .project-visual {
     min-height: 320px;
   }
+
+  .image-lightbox {
+    padding: 30px;
+  }
+
+  .image-lightbox-close {
+    top: 18px;
+    right: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 25px;
+  }
+
+  .image-lightbox-label {
+    top: -28px;
+
+    font-size: 8px;
+  }
 }
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 600px) {
   .modal-overlay {
@@ -358,6 +870,7 @@
 
   .project-modal {
     width: 100%;
+
     max-height: 94vh;
 
     padding: 65px 22px 30px;
@@ -375,6 +888,7 @@
 
   .modal-header {
     gap: 20px;
+
     padding-right: 0;
     padding-bottom: 25px;
   }
@@ -389,21 +903,114 @@
 
   .modal-tech span {
     padding: 6px 9px;
+
     font-size: 8px;
   }
 
   .modal-body {
     gap: 25px;
+
     padding-top: 25px;
+  }
+
+
+  /* ===================================================
+     MOBILE IMAGE
+  =================================================== */
+
+  .modal-main-image {
+    height: 300px;
+  }
+
+  .modal-image-label {
+    top: 9px;
+    left: 9px;
+
+    padding: 6px 8px;
+
+    font-size: 7px;
+  }
+
+  .modal-image-zoom {
+    display: none;
+  }
+
+
+  /* ===================================================
+     MOBILE THUMBNAILS
+  =================================================== */
+
+  .modal-thumbnails {
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 6px;
+
+    margin-top: 10px;
+  }
+
+  .modal-thumbnail {
+    height: 58px;
+  }
+
+  .modal-thumbnail span {
+    left: 4px;
+    bottom: 4px;
+
+    padding: 2px 4px;
+
+    font-size: 6px;
   }
 
   .modal-visual .project-visual {
     min-height: 260px;
   }
 
+
+  /* ===================================================
+     MOBILE LIGHTBOX
+  =================================================== */
+
+  .image-lightbox {
+    padding: 20px;
+  }
+
+  .image-lightbox-content {
+    width: 96vw;
+    height: 82vh;
+  }
+
+  .image-lightbox-content img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .image-lightbox-label {
+    top: -27px;
+    left: 0;
+
+    font-size: 7px;
+  }
+
+  .image-lightbox-close {
+    top: 15px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 23px;
+  }
+
+
+  /* ===================================================
+     META
+  =================================================== */
+
   .modal-meta {
     grid-template-columns: repeat(3, 1fr);
+
     gap: 10px;
+
     padding-bottom: 25px;
   }
 
@@ -415,29 +1022,48 @@
     font-size: 9px;
   }
 
+
+  /* ===================================================
+     SECTION
+  =================================================== */
+
   .modal-section {
     padding: 25px 0;
   }
 
   .modal-section-title {
     margin-bottom: 12px;
+
     font-size: 8px;
   }
 
   .modal-section p {
     font-size: 12px;
+
     line-height: 1.85;
   }
 
+
+  /* ===================================================
+     FEATURE
+  =================================================== */
+
   .feature-list li {
     gap: 10px;
+
     font-size: 12px;
   }
 }
 
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
 @media (max-width: 380px) {
   .project-modal {
     max-height: 95vh;
+
     padding: 60px 18px 25px;
   }
 
@@ -455,6 +1081,29 @@
     font-size: 38px;
   }
 
+
+  /* IMAGE */
+
+  .modal-main-image {
+    height: 250px;
+  }
+
+
+  /* THUMBNAILS */
+
+  .modal-thumbnails {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 5px;
+  }
+
+  .modal-thumbnail {
+    height: 55px;
+  }
+
+
+  /* META */
+
   .modal-meta {
     gap: 7px;
   }
@@ -463,7 +1112,180 @@
     font-size: 8px;
   }
 
+
+  /* OLD VISUAL */
+
   .modal-visual .project-visual {
     min-height: 220px;
+  }
+
+
+  /* LIGHTBOX */
+
+  .image-lightbox {
+    padding: 15px;
+  }
+
+  .image-lightbox-content {
+    width: 97vw;
+    height: 80vh;
+  }
+
+  .image-lightbox-close {
+    top: 10px;
+    right: 10px;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 21px;
+  }
+}
+
+
+/* =====================================================
+   MODAL HEADER RIGHT
+===================================================== */
+
+.modal-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 22px;
+}
+
+
+/* =====================================================
+   TECH STACK
+===================================================== */
+
+.modal-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.modal-tech span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 10px;
+
+  border: 1px solid #dededb;
+  border-radius: 999px;
+
+  color: #666;
+  background: transparent;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.modal-tech span:hover {
+  border-color: #222;
+  color: #222;
+}
+
+
+/* =====================================================
+   VIEW SITE
+===================================================== */
+
+.modal-live-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 0 7px;
+
+  color: #222;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  transition: color 0.25s ease;
+}
+
+/* 기본 밑줄 */
+.modal-live-link::before {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: #222;
+}
+
+/* hover 시 움직이는 선 */
+.modal-live-link::after {
+  content: '';
+
+  position: absolute;
+  left: -100%;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: #999;
+
+  transition: left 0.35s ease;
+}
+
+.modal-live-link:hover::after {
+  left: 0;
+}
+
+.modal-live-link span {
+  display: inline-block;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+
+  transform: translateY(-1px);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.modal-live-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+  .modal-header-right {
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .modal-tech {
+    justify-content: flex-start;
+  }
+
+  .modal-live-link {
+    margin-top: 2px;
   }
 }
