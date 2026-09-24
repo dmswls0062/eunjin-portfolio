@@ -7,7 +7,7 @@ function Footer() {
         EUNJIN<span>.</span>
       </div>
 
-      <p>© 2026 EUNJIN. ALL RIGHTS RESERVED.</p>
+      <p>© 2026 KIM EUNJIN.</p>
 
       <a href="#home">BACK TO TOP ↑</a>
     </footer>

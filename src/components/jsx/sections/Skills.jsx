@@ -1,43 +1,87 @@
 import '../../css/sections/Skills.css'
 
-const skills = [
-  { number: '01', name: 'Java', desc: '객체지향 프로그래밍과 기본적인 서버 개발' },
-  { number: '02', name: 'Spring', desc: 'Spring MVC 기반 웹 애플리케이션 개발' },
-  { number: '03', name: 'React', desc: '컴포넌트 기반의 웹 UI 개발' },
-  { number: '04', name: 'JavaScript', desc: '웹 페이지의 동작과 기능 구현' },
-  { number: '05', name: 'HTML / CSS', desc: '웹 페이지 구조와 반응형 UI 구현' },
-  { number: '06', name: 'Git / GitHub', desc: '버전 관리와 프로젝트 관리' },
+const skillGroups = [
+  {
+    number: '01',
+    title: 'LANGUAGE',
+    skills: ['Java', 'JavaScript', 'Python'],
+  },
+  {
+    number: '02',
+    title: 'FRONTEND',
+    skills: ['React', 'HTML / CSS', 'JSP'],
+  },
+  {
+    number: '03',
+    title: 'BACKEND',
+    skills: ['Spring', 'MyBatis', 'Node.js'],
+  },
+  {
+    number: '04',
+    title: 'DATABASE',
+    skills: ['Oracle', 'MySQL'],
+  },
 ]
 
 function Skills() {
   return (
     <section id="skills" className="skills section">
+      
+      {/* SECTION HEADER */}
       <div className="section-top">
         <span>03</span>
         <span>SKILLS</span>
       </div>
 
+      {/* INTRO */}
       <div className="skills-intro">
         <p>WHAT I USE</p>
 
         <h2>
           배우고,
           <br />
-          만들고,
+          직접 만들며
           <br />
-          성장합니다.
+          경험을 쌓았습니다.
         </h2>
       </div>
 
+      {/* SKILL LIST */}
       <div className="skills-list">
-        {skills.map((skill) => (
-          <div className="skill-item" key={skill.number}>
-            <span>{skill.number}</span>
-            <h3>{skill.name}</h3>
-            <p>{skill.desc}</p>
+        {skillGroups.map((group) => (
+          <div className="skill-row" key={group.title}>
+            
+            <div className="skill-category">
+              <span className="skill-number">
+                {group.number}
+              </span>
+
+              <h3>{group.title}</h3>
+            </div>
+
+            <div className="skill-items">
+              {group.skills.map((skill) => (
+                <span className="skill-item" key={skill}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+
           </div>
         ))}
       </div>
+
+      {/* BOTTOM MESSAGE */}
+      <div className="skills-bottom">
+        <span>ALWAYS LEARNING</span>
+
+        <p>
+          새로운 기술을 배우고,
+          <br />
+          직접 적용하며 성장하고 있습니다.
+        </p>
+      </div>
+
     </section>
   )
 }
